@@ -1,0 +1,101 @@
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 100px;
+    height: 100vh;
+    background-image: url(./logo_pegpese_20.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ccc;
+    .form{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        text-align: center;
+        justify-content: center;
+        form{
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            margin: 15px 0px;
+            text-align: center;
+            label{
+                font-size: 24px;
+                padding: 10px;
+                width: 70%;
+            }
+
+            input{
+                width: 70%;
+                padding: 10px;
+                margin: 5px;
+                border-radius: 10px;
+                border: 2px solid #252525;
+                font-size: 18px;
+            }
+
+            button{
+                width: 70%;
+                padding: 10px;
+                margin: 5px;
+                border-radius: 10px;
+                background-color: #7ab64d;
+                border: 1px solid #61933c;
+                &:active{
+                    background-color: #61933c;
+                }
+            }
+        }
+
+        label{
+            font-size: 24px;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        #pedido-chamado{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #be2535;
+        }
+    }
+
+    .table{
+        text-align: center;
+        ul{
+            height: 48rem;
+            overflow-y: auto;
+            li{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                width: 90%;
+                margin: 15px;
+                
+                label{
+                    font-size: 25px;
+                    width: 60%;
+                }
+                button {
+                    width: 40%;
+                    border-radius: 10px;
+                    background-color: #be2535;
+                    border: 1px solid #981e2a;
+
+                    &:active{
+                        background-color: #981e2a;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
