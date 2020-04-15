@@ -17,7 +17,6 @@ exports.setupWebsocket = (server)  => {
     });
 
     socket.on('remove', data => {
-      console.log(data)
       socket.broadcast.emit('delete', data);
     });
 

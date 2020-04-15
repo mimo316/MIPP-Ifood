@@ -4,13 +4,14 @@
     "slug": "ifoodMobile",
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "web"
     ],
     "version": "1.0.0",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
     "splash": {
- 
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -23,12 +24,6 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "package": "com.pegpese.IfoodPapafila",
-      "versionCode": 1
-    },
     "description": ""
   }
 }
-
-
