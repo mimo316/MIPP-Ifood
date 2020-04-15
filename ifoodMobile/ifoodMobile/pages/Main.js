@@ -18,21 +18,14 @@ export default function pages() {
       setOrders(response.data);
     }
 
-    function toggleScreen() {
-      navigation.navigate('Ads', loop)
-      clearInterval()
-    }
-  
     useEffect(() => {
       getRequest()
     }, []);
-  
-   setInterval(() => {
-    toggleScreen()
-   }, 10000);
 
-  
-  
+    const teste = () => {
+      
+    }
+    
     return (
       <View style={styles.container}>
         <View style={styles.call}>
@@ -72,11 +65,6 @@ export default function pages() {
             ))}
           </View>
 
-          <TouchableOpacity 
-            onPress={() => navigation.navigate('Ads')}
-          >
-              <Text>Teste</Text>
-          </TouchableOpacity>
   
         </View>
       </View>

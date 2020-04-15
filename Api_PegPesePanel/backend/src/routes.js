@@ -16,8 +16,15 @@ routes.put('/pedidos', RequestController.update)
 routes.get('/pedidos', RequestController.index)
  
 
+// routes.get('/', (req, res) => {
+//   res.send('ola')
+// })
+
 routes.get('/', (req, res) => {
-  res.send('ola')
+  res.sendFile(__dirname+'/index.html')
 })
+
+
+
 
 module.exports = routes;

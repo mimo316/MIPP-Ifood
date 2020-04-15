@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import './Styles.scss'
 import api from './api';
-
+import { connect, disconnect, subscribeTonewDelivery, removeOrder} from './socket';
 export default function Pedido() {
 
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(false);
     const [id, setId] = useState('');
+       
 
     async function getRequest() {
         const response = await api.get('pedidos')
-        console.log(response)
         setOrders(response.data)
-        console.log(orders)
     }
 
     async function handleNewOrder(event){
         event.preventDefault();
+        disconnect()
+        
         try{
-              await api.post('pedidos', {
-                  'id': id,
-                  'estado': '0'
-              })
+            await api.post('pedidos', {
+                'id': id,
+                'estado': '0'
+            })
             console.log('to entrando no metodo')
         }catch(error){
             console.log("dei erro na hora de inserir")
@@ -32,14 +33,16 @@ export default function Pedido() {
             await api.put('pedidos', {
                 "id": order,
                 "estado": "1"
-             })
+            })
         } catch (error) {
             console.log("dei erro na hora de atualizar")
             window.location.reload();
         }
-
+        
         setLoading(!loading)
         setId('');
+        connect()
+        subscribeTonewDelivery(id)
     }
 
     async function handleDelete(deliver){
@@ -48,6 +51,8 @@ export default function Pedido() {
                 "id": deliver,
                 "estado": "2"
             })
+
+            removeOrder(deliver)
         } catch (e) {
             console.log("dei erro na hora de ")
         }
@@ -58,6 +63,7 @@ export default function Pedido() {
 
     useEffect(() => {
         getRequest()
+        connect()
     }, [loading]);
 
     return (

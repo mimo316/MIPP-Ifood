@@ -1,0 +1,41 @@
+
+
+Thu Apr  9 12:19:46 2020
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 4.15.0-91-generic (#92-Ubuntu SMP Fri Feb 28 11:09:48 UTC 2020) x86_64
+Compiler: GCC 7.2
+ext2fs lib: 1.44.1, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.0
+/dev/sda: LBA, HPA, LBA48, DCO support
+/dev/sda: size       1953525168 sectors
+/dev/sda: user_max   1953525168 sectors
+/dev/sda: native_max 1953525168 sectors
+/dev/sdb: LBA, HPA, LBA48, DCO support
+/dev/sdb: size       468862128 sectors
+/dev/sdb: user_max   468862128 sectors
+/dev/sdb: native_max 468862128 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 1000 GB / 931 GiB - CHS 121601 255 63, sector size=512 - ST1000DM010-2EP102, S/N:Z9AC0XBL, FW:CC43
+Disk /dev/sdb - 240 GB / 223 GiB - CHS 29185 255 63, sector size=512 - WDC WDS240G1G0A-00SS50, S/N:171869457209, FW:Z3311000
+
+Partition table type (auto): EFI GPT
+Disk /dev/sdb - 240 GB / 223 GiB - WDC WDS240G1G0A-00SS50
+Partition table type: EFI GPT
+
+Interface Advanced
+hdr_size=92
+hdr_lba_self=1
+hdr_lba_alt=468862127 (expected 468862127)
+hdr_lba_start=34
+hdr_lba_end=468862094
+hdr_lba_table=2
+hdr_entries=128
+hdr_entsz=128
+ 1 P EFI System                  2048    1050623    1048576 [EFI System Partition]
+ 2 P Unknown                  1050624  468860927  467810304
+
+TestDisk exited normally.

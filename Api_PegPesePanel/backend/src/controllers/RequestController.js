@@ -6,7 +6,6 @@ module.exports = {
     
     const pedidos = await connection('pedidos')
       .select('*').where('estado', '<>', '2');
-
     return res.json(pedidos);
   },
 
