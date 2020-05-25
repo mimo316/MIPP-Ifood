@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Image, StatusBar } from 'react-native';
+import React, { useEffect, useState, } from 'react';
+import { StyleSheet, Text, View, Image, StatusBar, YellowBox } from 'react-native';
 import { Audio } from 'expo-av';
 import socketio from 'socket.io-client'
 import api from './api';
@@ -17,6 +17,11 @@ export default function App() {
   const soundObject = new Audio.Sound();
 
 
+YellowBox.ignoreWarnings([
+  'Unrecognized WebSocket connection option(s) `agent`, `perMessageDeflate`, `pfx`, `key`, `passphrase`, `cert`, `ca`, `ciphers`, `rejectUnauthorized`. Did you mean to put these under `headers`?'
+])
+
+
   async function getRequest() {
     const response = await api.get('pedidos')
     setOrders(response.data);
@@ -27,7 +32,6 @@ export default function App() {
 
     socket.on('new', async id => {
       setTeste([...teste, id])
-      setTela(1)
     })
 
     socket.on('this', function (data) {
@@ -47,7 +51,6 @@ export default function App() {
       console.log(error)
     }
   }
-
 
   useEffect(() => {
     getRequest()

@@ -5,6 +5,7 @@ const socket = socketio('http://192.168.10.43:3333', {
 });
 
 function subscribeTonewDelivery(id) {
+    //console.log(id)
     socket.emit('new-delivery',id);
 }
 

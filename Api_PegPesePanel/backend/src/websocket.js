@@ -4,6 +4,7 @@ exports.setupWebsocket = (server)  => {
   const io = socketio(server);
 
   io.on('connection', function (socket) {
+
     io.emit('this', { will: 'be received by everyone'});
 
     socket.emit('news');
@@ -13,6 +14,7 @@ exports.setupWebsocket = (server)  => {
     });
 
     socket.on('new-delivery', data => {
+      //console.log(data) debugar o valor recebido
       socket.broadcast.emit('new', data);
     });
 

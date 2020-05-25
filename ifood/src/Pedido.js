@@ -54,7 +54,7 @@ export default function Pedido() {
 
             removeOrder(deliver)
         } catch (e) {
-            console.log("dei erro na hora de ")
+            console.log("dei erro na hora de excluir")
         }
 
         setLoading(!loading)
